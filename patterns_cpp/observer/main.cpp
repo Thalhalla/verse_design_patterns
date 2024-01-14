@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+
+// https://www.geeksforgeeks.org/observer-pattern-c-design-patterns/
  
 // Observer interface
 class Observer {

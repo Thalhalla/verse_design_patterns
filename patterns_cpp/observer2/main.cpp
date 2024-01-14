@@ -2,6 +2,8 @@
 #include <vector>
 #include <stdio.h> 
 
+// https://sourcemaking.com/design_patterns/observer/cpp/3
+
 using namespace std;
 
 class Subject {

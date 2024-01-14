@@ -1,5 +1,6 @@
-// Abstract product class
+// https://www.geeksforgeeks.org/factory-method-pattern-c-design-patterns/?ref=lbp
 #include <bits/stdc++.h>
+// Abstract product class
 class Shape {
 public:
 	virtual void draw() = 0;

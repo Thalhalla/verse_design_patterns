@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <unordered_map>
+// https://refactoring.guru/design-patterns/flyweight/cpp/example#example-0
 /**
  * Flyweight Design Pattern
  *

@@ -1,5 +1,7 @@
 #include <stdio.h> 
 
+// https://www.geeksforgeeks.org/c-bitmasking/
+
 int main() 
 { 
 	int l = 13; 
