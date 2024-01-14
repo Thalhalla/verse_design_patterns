@@ -11,25 +11,22 @@ Shape := class:
 
 Circle := class<concrete>(Shape):
     draw<override>() : void =
-        Print("Hello, world! I'm a circle")
+        Print("Drawing a Circle")
 
 Square := class<concrete>(Shape):
     draw<override>() : void =
-        Print("Hello, world! I'm a square")
+        Print("Drawing a Square")
 
 ShapeFactory := class:
     createShape<public>() : Shape =
-        Print("Hello, shape factory! I'm making a shape")
         return Shape{}
 
 CircleFactory := class<concrete>(ShapeFactory):
     createShape<override>() : Circle =
-        Print("Hello, circle factory! I'm making a circle")
         return Circle{}
 
 SquareFactory := class<concrete>(ShapeFactory):
     createShape<override>() : Square =
-        Print("Hello, square factory! I'm making a square")
         return Square{}
 
 g4g_factoryofshapes := class(creative_device):
