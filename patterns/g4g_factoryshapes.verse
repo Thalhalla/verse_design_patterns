@@ -32,7 +32,7 @@ SquareFactory := class<concrete>(ShapeFactory):
         Print("Hello, square factory! I'm making a square")
         return Square{}
 
-factoryofshapes := class(creative_device):
+g4g_factoryofshapes := class(creative_device):
     OnBegin<override>()<suspends>:void=
         circleFactory := CircleFactory{}
         squareFactory := SquareFactory{}
