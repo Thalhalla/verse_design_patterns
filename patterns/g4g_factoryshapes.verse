@@ -5,9 +5,8 @@ using { /UnrealEngine.com/Temporary/Diagnostics }
 # This is a verse implementation of the excellent C++ example given here:
 # https://www.geeksforgeeks.org/factory-method-pattern-c-design-patterns/?ref=lbp
 
-Shape := class:
-    draw<public>() : void =
-        Print("Hello, world!")
+Shape := class<abstract>:
+    draw<public>() : void
 
 Circle := class<concrete>(Shape):
     draw<override>() : void =
@@ -17,9 +16,8 @@ Square := class<concrete>(Shape):
     draw<override>() : void =
         Print("Drawing a Square")
 
-ShapeFactory := class:
-    createShape<public>() : Shape =
-        return Shape{}
+ShapeFactory := class<abstract>:
+    createShape<public>() : Shape
 
 CircleFactory := class<concrete>(ShapeFactory):
     createShape<override>() : Circle =

@@ -5,31 +5,36 @@ using { /UnrealEngine.com/Temporary/Diagnostics }
 # This is a verse implementation of the excellent C++ example given here:
 # https://www.geeksforgeeks.org/composite-method-software-design-pattern/
 
-FileSystemComponent := interface():
+FileSystemComponent := class<abstract>():
+    var name : string
+    var size : int = 0
     display<public>():void
 
 File := class(FileSystemComponent):
-    name<private> : string
-    size<private> : int
+    # removing <private> so that the constructor can set these
+    var name<override>: string
+    var size<override>: int = 0
 
-    display<public>():void=
+    display<override>():void=
         Print("File: {name} ({size})")
 
 
 Directory := class(FileSystemComponent):
-    name<private> : string
+    var name<override>: string
     var components<private>  : []FileSystemComponent = array{}
 
-    display<public>():void=
+    display<override>():void=
         Print("Directory: {name}")
+        for (component : components):
+            component.display()
 
     addComponent<public>(component:FileSystemComponent):void=
         set components += array{component}
 
 g4g_composite := class(creative_device):
     OnBegin<override>()<suspends>:void=
-        file1 := FileSystemComponent{ name := "document.txt", size = 1024 }
-        file2 := FileSystemComponent{ name := "image.jpg", size = 2048 }
+        file1 := File{name := "document.txt", size := 1024}
+        file2 := File{name := "image.jpg", size := 2048}
 
         directory := Directory{ name := "My Documents" }
 
